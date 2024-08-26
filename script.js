@@ -7,6 +7,13 @@ const player2ScoreElement = document.querySelector(".player2-score");
 const reset = document.querySelector(".reset");
 const newGame = document.querySelector(".new-game");
 
+// Grapping the Audio Assets
+
+const tileClickSound = new Audio("./assest/audio/tile-click.mp3");
+const resetGameSound = new Audio("./assest/audio/reset-game.mp3");
+const newGameSound = new Audio("/assest/audio/new-game.mp3");
+const winSound = new Audio("/assest/audio/win.mp3");
+
 // Global Variables
 
 let player = "X",
@@ -34,6 +41,8 @@ for (let i = 0; i < tiles.length; i++) {
   tiles[i].addEventListener("click", (tile) => {
     //   checknig if tile does not have value
     if (selectedTiles.indexOf(i) == -1) {
+      tileClickSound.currentTime = 0;
+      tileClickSound.play();
       switchTurns();
       tile.target.innerHTML = `${player}`;
       selectedTiles.push(i);
@@ -71,6 +80,8 @@ function checkWinning(playerTiles) {
     if (tileSet.every((tile) => playerTiles.includes(tile))) {
       player == "X" ? (player1Score += 1) : (player2Score += 1);
       endGame();
+      winSound.currentTime = 0;
+      winSound.play();
       return;
     } else if (selectedTiles.length == 9) {
       endGame();
@@ -92,6 +103,8 @@ function startNewGame() {
     tile.innerHTML = "";
   });
   roundNumberElement.innerHTML = roundNumber;
+  newGameSound.currentTime = 0;
+  newGameSound.play();
 }
 
 // Adding New Game Button Functionality
@@ -123,6 +136,8 @@ function resetGame() {
   tiles.forEach((tile) => {
     tile.innerHTML = "";
   });
+  resetGameSound.currentTime = 0;
+  resetGameSound.play();
 }
 
 // Adding Reset Button Functionality
