@@ -82,9 +82,10 @@ function checkWinning(playerTiles) {
       endGame();
       winSound.currentTime = 0;
       winSound.play();
-      return;
-    } else if (selectedTiles.length == 9) {
-      endGame();
+      if (selectedTiles.length == 9) {
+        endGame();
+        return;
+      }
       return;
     }
   }
