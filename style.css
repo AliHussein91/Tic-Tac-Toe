@@ -174,7 +174,8 @@ main {
   transition: scale 0.1s ease-in-out;
 }
 
-.game-controls .inactive {
+.game-controls .inactive,
+.game-controls .inactive:focus {
   background-color: var(--color-black);
   pointer-events: none;
 }
