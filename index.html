@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="details">
+        <h1>Welcome, let's have fun!👋</h1>
+        <p>
+          Get ready to outsmart your opponent in a classic game of tic-tac-toe!
+          The first to get three in a row wins. Are you up for the challenge?
+        </p>
+        <section class="game-details">
+          <h2>Round<br /><span class="round">1</span></h2>
+          <h2>Player X<br /><span class="player1-score">0</span></h2>
+          <h2>Player O<br /><span class="player2-score">0</span></h2>
+        </section>
+      </section>
+      <section class="game">
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+      </section>
+      <section class="game-controls">
+        <button class="reset button-primary">Reset</button>
+        <button class="new-game button-primary inactive">New Game</button>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
